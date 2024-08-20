@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper{
+    display: flex;
+    min-width: 1000px;
+    margin: 0 auto;
+}
+
+#main-header {
+    display: flex;
+    justify-content: space-around;
+}
