@@ -1,8 +1,12 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  font-family: "Lexend", sans-serif;
 }
 
 body {
@@ -19,4 +23,28 @@ body {
 #main-header {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  color: #25283D;
+  font-size: 130%;
+}
+
+#navbar{
+  display: flex;
+  gap: 50px;
+  font-weight: 500;
+}
+
+a{
+  color:#25283D;
+}
+
+#user-buttons{
+  display: flex;
+  gap: 30px;
+}
+
+.sign-button{
+  border: none;
+  padding: 5px 25px;
+  font-size: 1.2rem;
 }
