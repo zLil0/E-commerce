@@ -161,11 +161,19 @@ body {
   user-select: none;
   border: 1px solid #C7C4C4;
   border-radius: 10px;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.product-card:hover{
+  transform: scale(1.02);
+  transition: .3s ease;
 }
 
 .product-card .card-thumbnail{
   width: 200px;
   height: 200px;
+  border-radius: 10px 10px 0 0;
 }
 
 .product-name{
