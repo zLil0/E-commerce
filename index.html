@@ -5,21 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
   <title>E-Commerce</title>
 </head>
 
 <body>
   <header id="main-header" class="wrapper">
     <div id="navbar">
-      <a href="index.html">Home</a>
-      <a href="index.html">About</a>
+      <a href="index.html" id="home-anchor" class="header-anchor active">Home</a>
+      <a href="index.html" id="about-anchor" class="header-anchor">About</a>
     </div>
     <h1 id="home-title">E-Commerce</h1>
     <div id="user-buttons">
-      <box-icon name='cart' color='#25283d' ></box-icon>
+      <a href="userCart.html"><img src="assets/shopping-cart.svg" alt="shopping-cart" id="cart-icon"></a>
       <button id="sign-up-button" class="sign-button">Sign up</button>
-      <button id="sign-up-button" class="sign-button">Sign in</button>
+      <button id="sign-in-button" class="sign-button">Sign in</button>
     </div>
   </header>
 

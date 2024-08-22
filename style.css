@@ -7,11 +7,13 @@
   box-sizing: border-box;
   text-decoration: none;
   font-family: "Lexend", sans-serif;
+  color:#25283D;
 }
 
 body {
   display: flex;
   flex-direction: column;
+  background: #e4e4e4;
 }
 
 .wrapper {
@@ -25,17 +27,15 @@ body {
   justify-content: space-around;
   align-items: center;
   color: #25283D;
-  font-size: 130%;
+  font-size: 110%;
+  margin-top: 20px;
+  user-select: none;
 }
 
 #navbar{
   display: flex;
   gap: 50px;
   font-weight: 500;
-}
-
-a{
-  color:#25283D;
 }
 
 #user-buttons{
@@ -46,5 +46,50 @@ a{
 .sign-button{
   border: none;
   padding: 5px 25px;
-  font-size: 1.2rem;
+  font-weight: 700;
+  border: 2px solid;
+  cursor: pointer;
+}
+
+#sign-up-button{
+  background: #07BEB8;
+  border-color: #07BEB8;
+  transition: .3s ease;
+}
+
+#sign-in-button{
+  background: none;
+  transition: .3s ease;
+}
+
+.header-anchor{
+  position: relative;
+}
+
+.header-anchor::after{
+  position: absolute;
+  content: '';
+  left: -10%;
+  bottom: -10px;
+  height: 3px;
+  width: 120%;
+  background:#07BEB8;
+  transform: scaleX(0);
+  transition: .2s ease;
+}
+
+.header-anchor:hover::after{
+  transform: scaleX(1);
+  transition: .2s ease;
+}
+
+.header-anchor.active::after{
+  transform: scale(1);
+}
+
+#sign-in-button:hover{
+  background: #25283D;
+  color: #e4e4e4;
+  border: #25283D 2px solid;
+  transition: .3s ease;
 }
