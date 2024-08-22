@@ -23,8 +23,9 @@ body {
 }
 
 #home-header {
+  position: relative;
   display: flex;
-  justify-content: space-around;
+  padding: 0 3%;
   align-items: center;
   color: #25283D;
   font-size: 110%;
@@ -32,15 +33,21 @@ body {
   user-select: none;
 }
 
+#home-title{
+  position: absolute;
+  right: calc(50% - 114px);
+}
+
 #navbar{
   display: flex;
-  gap: 50px;
+  margin-right: auto;
+  gap: 90px;
   font-weight: 500;
 }
 
 #user-buttons{
   display: flex;
-  gap: 30px;
+  gap: 20px;
 }
 
 .sign-button{
