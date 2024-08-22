@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <header id="main-header" class="wrapper">
+  <header id="home-header" class="wrapper">
     <div id="navbar">
       <a href="index.html" id="home-anchor" class="header-anchor active">Home</a>
       <a href="index.html" id="about-anchor" class="header-anchor">About</a>
@@ -21,6 +21,25 @@
       <button id="sign-in-button" class="sign-button">Sign in</button>
     </div>
   </header>
+  <main id="home-main" class="wrapper">
+    <div id="searching-controls">
+      <div id="filter-component">
+        <label for="order-by">Order by: </label>
+        <select name="order-by" id="order-by">
+          <option value="lower-price">lower price</option>
+          <option value="higher-price">higher price</option>
+          <option value="higher-price">rating</option>
+        </select>
+      </div>
+      <div id="searching-component">
+        <input type="text" id="main-search-bar" placeholder="Item...">
+        <div id="main-search-icon">
+          <img src="assets/search-icon.svg" alt="search-icon" id="search-icon">
+        </div>
+      </div>
+    </div>
+    <div id="home-main-content"></div>
+  </main>
 
 </body>
 
