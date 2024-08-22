@@ -24,8 +24,8 @@
   <main id="home-main" class="wrapper">
     <div id="searching-controls">
       <div id="filter-component">
-        <label for="order-by">Order by: </label>
-        <select name="order-by" id="order-by">
+        <label for="sort-by">Sort by: </label>
+        <select name="sort-by" id="sort-by">
           <option value="lower-price">lower price</option>
           <option value="higher-price">higher price</option>
           <option value="higher-price">rating</option>
@@ -38,7 +38,24 @@
         </div>
       </div>
     </div>
-    <div id="home-main-content"></div>
+    <div id="home-main-content">
+
+      <div class="product-card">
+        <img src="https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png" alt="Beauty" class="card-thumbnail">
+        <div class="card-text">
+          <header class="card-header"><h3 class="product-name">Essence Mascara Lash Princess</h1></header>
+            <p class="card-body">
+              <span class="price">$ 9.00</span>
+              was <span class="old-price">$12.00</span>
+            </p>
+            <div class="rating-container">
+              <img src="assets/star-rating.svg" alt="star">
+              <span class="rating">3.9</span>
+            </div>
+          </div>
+      </div>
+
+    </div>
   </main>
 
 </body>
