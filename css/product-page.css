@@ -1,0 +1,8 @@
+#product-page{
+  width: 100%;
+  display: flex;
+}
+
+#product-page .card-thumbnail{
+  height: 400px;
+}
