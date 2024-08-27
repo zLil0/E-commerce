@@ -6,3 +6,25 @@
 #product-page .card-thumbnail{
   height: 400px;
 }
+
+#product-page #product-description{
+  margin-top: 20px;
+}
+
+#price-rating-container{
+  display: flex;
+  margin-top: 10px;
+}
+
+#price-info #price{
+  font-size: 1.3rem;
+}
+
+#price-info #old-price{
+  color: #9e9a9a;
+}
+
+#old-price span{
+  text-decoration: line-through;
+  color: #9e9a9a;
+}

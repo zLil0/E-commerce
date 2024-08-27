@@ -45,13 +45,18 @@
         <header class="card-header">
           <h2 id="product-name">Gucci Bloom Eau de</h1>
         </header>
-        <p class="card-body">
-          <span class="price">$ ${calcPrice(product).toFixed(2)}</span>
-          was <span class="old-price">$${product.price}</span>
+        <p id="product-description">
+          Gucci Bloom by Gucci is a floral and captivating fragrance, with notes of tuberose, jasmine, and Rangoon creeper. It's a modern and romantic scent.
         </p>
-        <div class="rating-container">
-          <img src="assets/star-rating.svg" alt="star">
-          <span class="rating">${product.rating}</span>
+        <div id="price-rating-container">
+          <div id="price-info">
+            <p><span id="discount">-8.9% </span><span id="price">$79.99</span></p>
+            <p id="old-price">was <span>$85.32</span></p>
+          </div>
+          <div class="rating-container">
+            <img src="assets/star-rating.svg" alt="star">
+            <span class="rating">2.69</span>
+          </div>
         </div>
       </div>
     </div>
