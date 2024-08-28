@@ -4,11 +4,16 @@
 }
 
 #product-page .card-thumbnail{
-  height: 400px;
+  height: 300px;
 }
 
 #product-page #product-description{
   margin-top: 20px;
+}
+
+#product-page #product-brand{
+  font-size: 1.05rem;
+  margin-top: 1%;
 }
 
 #price-rating-container{
@@ -27,4 +32,50 @@
 #old-price span{
   text-decoration: line-through;
   color: #9e9a9a;
+}
+
+#product-page #add-to-cart{
+  padding: 10px 20px;
+  background: #07BEB8;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+}
+
+#product-page #button-container {
+  margin-top: 4%;
+}
+
+#product-page #button-container p{
+  font-size: 0.8rem;
+}
+
+#comment-section{
+  width: 100%;
+  padding: 1% 5%;
+}
+#comment-section>h2{
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.comment-card{
+  border: 1px solid #dbd7d7;
+  padding: 10px;
+  margin-top: 1%;
+}
+
+.comment-header{
+  display: flex;
+  gap: 5%;
+}
+.comment-email{
+  font-size: 0.8rem;
+  margin-bottom: 1%;
+}
+
+.comment-date{
+  color: #9e9a9a;
+  font-size: 0.8rem;
 }
