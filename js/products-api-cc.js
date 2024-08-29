@@ -30,7 +30,12 @@ const calcPrice = (product) => {
 }
 
 const showProducts = (arr) => {
+  console.log(arr)
   cardsContainer.innerHTML = ''
+  if(arr.length == 0){
+    console.log('oi')
+    cardsContainer.innerHTML = '<p>No items found.</p>'
+  }
   arr.forEach((product) => {
     cardsContainer.innerHTML += `
       <div class="product-card" onclick="goToProductPage(${product.id})">
@@ -48,7 +53,6 @@ const showProducts = (arr) => {
           </div>
       </div>
     `
-
   })
   document.querySelector('#page-number').innerHTML = page + 1
 }
@@ -109,6 +113,24 @@ const goToProductPage = async (i) => {
   showReviews(product)
 }
 
+const searchProduct = async() =>{
+  const name = document.querySelector('#main-search-bar').value
+  if(name !== ""){
+    const response = await fetch('https://dummyjson.com/products?limit=0')
+    const data = await response.json()
+    const products = data.products
+    let searchResult = []
+    products.forEach((product) => {
+      if(product.title.toLowerCase().includes(name.toLowerCase())){
+        searchResult.push(product)
+      }
+    })
+    page = 0;
+    showProducts(searchResult)
+  }
+}
+
+
 const reviewStars = (rating) =>{
   let stars = [0,0,0,0,0]
   for(let i = 0; i<rating; i++){
@@ -150,3 +172,4 @@ const showReviews = (product) => {
 sortBySelect.addEventListener("change", function() {
   resetResults()
 })
+

@@ -34,7 +34,7 @@
       </div>
       <div id="searching-component">
         <input type="text" id="main-search-bar" placeholder="Item...">
-        <div id="main-search-icon">
+        <div id="main-search-icon" onclick="searchProduct()">
           <img src="assets/search-icon.svg" alt="search-icon" id="search-icon">
         </div>
       </div>
@@ -43,7 +43,7 @@
       <div id="cards-container"></div>
       <div id="pagination-controls">
         <button onclick="productsPagination('prev')">Prev</button>
-        <span id="page-number">5</span>
+        <span id="page-number"></span>
         <button onclick="productsPagination('next')">Next</button>
       </div>
     </div>

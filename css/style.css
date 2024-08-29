@@ -229,6 +229,10 @@ body {
   width: 860px;
 }
 
+#cards-container>p{
+  margin: 0 auto;
+}
+
 #pagination-controls{
   margin-top: 2%;
   display: flex;
