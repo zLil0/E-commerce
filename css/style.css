@@ -217,7 +217,29 @@ body {
 
 #home-main-content{
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#cards-container{
+  display: flex;
   flex-wrap: wrap;
   gap: 20px;
   width: 860px;
+}
+
+#pagination-controls{
+  margin-top: 2%;
+  display: flex;
+  align-items: center;
+  gap: 9%;
+  user-select: none;
+}
+
+#pagination-controls button{
+  padding: 2px 10px;
+  border: none;
+  background-color: #07BEB8;
+  cursor: pointer;
 }

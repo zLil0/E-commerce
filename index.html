@@ -5,10 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/product-page.css">
   <title>E-Commerce</title>
 </head>
 
-<body>
+<body onload="productsPagination()">
   <header id="home-header" class="wrapper">
     <div id="navbar">
       <a href="index.html" id="home-anchor" class="header-anchor active">Home</a>
@@ -38,7 +39,14 @@
         </div>
       </div>
     </div>
-    <div id="home-main-content"></div>
+    <div id="home-main-content">
+      <div id="cards-container"></div>
+      <div id="pagination-controls">
+        <button onclick="productsPagination('prev')">Prev</button>
+        <span id="page-number">5</span>
+        <button onclick="productsPagination('next')">Next</button>
+      </div>
+    </div>
   </main>
 
 </body>
