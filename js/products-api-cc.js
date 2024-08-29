@@ -37,8 +37,15 @@ const showProducts = (arr) => {
 }
 
 const productsPagination = async (move) => {
-  if (move === 'next') page++
-  else if (move === 'prev') page--
+  if (move === 'next') {
+    if(page<8) page++
+    else page = 0
+  }
+  else if (move === 'prev') {
+    if(page>0) page--
+    else page = 8
+  }
+
   window.scroll({
     top: 0,
     behavior: 'smooth'
