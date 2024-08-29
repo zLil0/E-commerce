@@ -1,15 +1,32 @@
 const cardsContainer = document.querySelector('#cards-container')
 let page = 0
+const sortBySelect = document.querySelector('#sort-by')
 
+const sortBy = (p) =>{
+  const op = sortBySelect.value
+  let url
+  switch(op){
+    case 'lower-price': url = `https://dummyjson.com/products?limit=24&skip=${24 * p}&sortBy=price&order=asc`
+    break
+    case 'higher-price': url = `https://dummyjson.com/products?limit=24&skip=${24 * p}&sortBy=price&order=desc`
+    break
+    case 'rating': url = `https://dummyjson.com/products?limit=24&skip=${24 * p}&sortBy=rating&order=desc`
+    break
+    default: url = `https://dummyjson.com/products?limit=24&skip=${24 * p}`
+    break
+  }
+  return url
+}
 
 const fetchProducts = async (p) => {
-  const response = await fetch(`https://dummyjson.com/products?limit=24&skip=${24 * page}`)
+  const url = sortBy(p)
+  const response = await fetch(url)
   const data = await response.json()
   return data.products
 }
 
 const calcPrice = (product) => {
-  return price = product.price * (1 - (product.discountPercentage / 100))
+  return price = product.price / (1 - (product.discountPercentage / 100))
 }
 
 const showProducts = (arr) => {
@@ -21,8 +38,8 @@ const showProducts = (arr) => {
         <div class="card-text">
           <header class="card-header"><h3 class="product-name">${product.title}</h1></header>
             <p class="card-body">
-              <span class="price">$ ${calcPrice(product).toFixed(2)}</span>
-              was <span class="old-price">$${product.price}</span>
+              <span class="price">$ ${product.price}</span>
+              was <span class="old-price">$${calcPrice(product).toFixed(2)}</span>
             </p>
             <div class="rating-container">
               <img src="assets/star-rating0.svg" alt="star">
@@ -34,6 +51,12 @@ const showProducts = (arr) => {
 
   })
   document.querySelector('#page-number').innerHTML = page + 1
+}
+
+const resetResults = async() => {
+  page = 0
+  const products = await fetchProducts(page)
+  showProducts(products)
 }
 
 const productsPagination = async (move) => {
@@ -49,7 +72,7 @@ const productsPagination = async (move) => {
   window.scroll({
     top: 0,
     behavior: 'smooth'
-  });
+  })
   const products = await fetchProducts(page)
   showProducts(products)
 }
@@ -69,8 +92,8 @@ const goToProductPage = async (i) => {
         <p id="product-description">${product.description}</p>
         <div id="price-rating-container">
           <div id="price-info">
-            <p><span id="discount">-%${product.discountPercentage} </span><span id="price">$${calcPrice(product).toFixed(2)}</span></p>
-            <p id="old-price">was <span>${product.price}</span></p>
+            <p><span id="discount">-%${product.discountPercentage} </span><span id="price">$${product.price}</span></p>
+            <p id="old-price">was <span>${calcPrice(product).toFixed(2)}</span></p>
           </div>
           <div class="rating-container">
             <img src="assets/star-rating0.svg" alt="star">
@@ -124,3 +147,6 @@ const showReviews = (product) => {
   })
 }
 
+sortBySelect.addEventListener("change", function() {
+  resetResults()
+})
